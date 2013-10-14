@@ -25,6 +25,7 @@ public class ProductsBB implements Serializable{
     private JPAStore jpa;
     
     public List<Product> getAll(){
+        jpa = new JPAStore();
         return jpa.getProductCatalogue().getAll(true, 0, 0);
     }
 
