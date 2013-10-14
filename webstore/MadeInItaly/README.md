@@ -1,4 +1,0 @@
-MadeInItaly
-===========
-
-Web-shop
