@@ -1,6 +1,6 @@
-package webshop.utils;
+package webstore.utils;
 
-import webshop.core.Product;
+import webstore.core.Product;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;

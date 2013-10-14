@@ -1,7 +1,7 @@
 
-package webshop.core;
+package webstore.core;
 
-import webshop.utils.IDAO;
+import webstore.utils.IDAO;
 import java.util.List;
 
 /**

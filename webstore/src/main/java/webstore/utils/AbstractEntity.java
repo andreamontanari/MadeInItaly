@@ -1,5 +1,5 @@
 
-package webshop.utils;
+package webstore.utils;
 
 import java.io.Serializable;
 import java.util.Objects;

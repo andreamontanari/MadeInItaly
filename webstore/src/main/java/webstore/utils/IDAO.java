@@ -1,5 +1,5 @@
 
-package webshop.utils;
+package webstore.utils;
 
 import java.util.ArrayList;
 import java.util.Comparator;

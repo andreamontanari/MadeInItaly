@@ -1,6 +1,6 @@
-package webshop.core;
+package webstore.core;
 
-import webshop.utils.AbstractDAO;
+import webstore.utils.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;

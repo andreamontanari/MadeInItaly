@@ -1,4 +1,4 @@
-package webshop.core;
+package webstore.core;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;

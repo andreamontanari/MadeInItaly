@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package webshop.bb;
+package webstore.bb;
 
 /**
  *  Used in faces-config and beans for navigation

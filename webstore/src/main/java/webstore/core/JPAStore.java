@@ -1,4 +1,4 @@
-package webshop.core;
+package webstore.core;
 
 /**
  *

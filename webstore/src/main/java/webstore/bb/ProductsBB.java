@@ -2,16 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package webshop.bb;
+package webstore.bb;
 
-import webshop.core.Product;
+import webstore.core.Product;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import webshop.core.JPAStore;
+import webstore.core.JPAStore;
 
 /**
  * Must have in session scope, has state (in ContainerNavigator)!

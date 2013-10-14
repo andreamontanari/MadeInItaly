@@ -1,6 +1,6 @@
-package webshop.core;
+package webstore.core;
 
-import webshop.utils.AbstractEntity;
+import webstore.utils.AbstractEntity;
 import javax.persistence.Entity;
 
 
