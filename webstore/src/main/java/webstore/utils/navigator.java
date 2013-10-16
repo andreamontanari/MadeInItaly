@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package webstore.utils;
 
 import java.util.ArrayList;
@@ -13,7 +17,7 @@ import webstore.core.Product;
  *
  * @author Andrea
  */
-public class navigator extends AbstractDAO<T, K> {
+public class navigator {
     
      private int first;  // Fist item in table
      private int nItems = getCount(); // Number of items in Database
@@ -28,7 +32,34 @@ public class navigator extends AbstractDAO<T, K> {
         this.nItems = nItems; 
         emf = Persistence.createEntityManagerFactory(puName);
      }
-   
+     
+     public Product next() {
+         List<Product> show = getAll(true, 0, getCount());
+         Product[] ciao = (Product[]) show.toArray();
+         if (count != nItems) {
+             for (int i=4*count; i<4*count+4; i++) {
+                 return ciao[i];
+             }
+             count++;
+         }
+         return null;
+     }
+     
+        public Product prev() {
+         List<Product> show = getAll(true, 0, getCount());
+         Product[] ciao = (Product[]) show.toArray();
+         if (count != nItems) {
+             for (int i=4*count; i<4*count+4; i++) {
+                 return ciao[i];
+             }
+             count--;
+         }
+         return null;
+     }
+     
+     
+
+    /* OLD TRY    
     public List<T> next() {
         EntityManager em = emf.createEntityManager();
         List<T> products = new ArrayList<>();
@@ -78,6 +109,7 @@ public class navigator extends AbstractDAO<T, K> {
         }
         return products;
     }
+    */
 
     public int getCount() {
         EntityManager em = emf.createEntityManager();
@@ -89,40 +121,29 @@ public class navigator extends AbstractDAO<T, K> {
     }
     
     
+    public List<Product> getAll(boolean all, int start, int count) {
+        EntityManager em = emf.createEntityManager();
+        List<Product> products = new ArrayList<>();
+        try {
+            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+            cq.select(cq.from(Product.class));
+            Query q = em.createQuery(cq);
+            if (!all) {
+                q.setMaxResults(count);
+                q.setFirstResult(start);
+            }
+            products.addAll(q.getResultList());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return products;
+    }
+    
+    
     
     
 }
 
-
-
-/*
-   next: function(success, fail) {
-            // Must save this, will change inside $.when()
-            var me = this;
-            me.container.getCount().then(function(result) {
-                // Move fst pointer
-                me.fst = (me.fst + me.max < result.value) ? me.fst + me.max : me.fst;
-                // How many items for last listing?
-                var m = (me.fst + me.max > result.value) ? result.value - me.fst : me.max;
-                return m;
-            }, fail).then(function(m) {
-                me.container.getRange(me.fst, m).then(success, fail);
-            });
-        },
-        prev: function(success, fail) {
-            var me = this;
-            me.fst = (me.fst - me.max > 0) ? me.fst - me.max : 0;
-            me.container.getCount().then(function(result) {
-                var m = (me.fst + me.max > result.value) ? result.value - me.fst : me.max;
-                return m;
-            }, fail).then(function(m) {
-                me.container.getRange(me.fst, m).then(success, fail);
-            });
- * 
- * 
- * 
- * 
- * 
- * 
- */
 
