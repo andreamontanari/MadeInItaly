@@ -1,5 +1,7 @@
 package webstore.core;
 
+import java.io.Serializable;
+
 /**
  *
  * Shop is a container for other containers NOTE: Uses Java 1.7
@@ -7,14 +9,15 @@ package webstore.core;
  * @author hajo
  */
 
-public class JPAStore implements IStore {
+public class JPAStore implements IStore, Serializable {
 
     private String persistenceUnitName = "store";
     private IProductCatalogue productCatalogue;
 
+    
 
     public JPAStore() {
-        productCatalogue = ProductCatalogue.newInstance(persistenceUnitName);
+            productCatalogue = ProductCatalogue.newInstance(persistenceUnitName);   
     }
 
     @Override

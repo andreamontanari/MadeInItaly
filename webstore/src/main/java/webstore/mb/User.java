@@ -1,24 +1,26 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package webstore.mb;
 
 import java.io.Serializable;
 
 /**
  *
- * @author hajo
+ * @author hajon
  */
 public class User implements Serializable {
 
-    private final String name;
-   
-    User(String name) {
-       this.name = name;
+    private String username;
+    private String password;
+    
+    public User(String username, String password) {
+       this.username = username;
+       this.password = password;
     }
 
     public String getName() {
-        return name;
+        return username;
     }
-}
+    public String getPassword(){
+        return password;
+    }
+}   

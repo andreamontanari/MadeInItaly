@@ -28,5 +28,7 @@ public class ProductsBB implements Serializable{
         jpa = new JPAStore();
         return jpa.getProductCatalogue().getAll(true, 0, 0);
     }
-
+    public String navigate(String target) {
+        return target;
+    }
 }
