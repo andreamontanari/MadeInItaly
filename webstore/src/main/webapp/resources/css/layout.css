@@ -1,15 +1,20 @@
-/* 
-    Document   : layout.css
-    Author     : Jonas Ha
-    Description: Layout for the pages with no style
-*/
-
 body { 
     /* Over all width */
-    display: block;
-    width: 120em;
-    margin-left: auto;
-    margin-right: auto;
+  
+}
+
+footer {
+    background-color: #cc0000;
+    color: white;
+}
+
+#page{
+    
+    
+    margin-left: 250px;
+    width: 800px;
+    height: 800px;
+    background-color: #E0E0E0;
 }
 
 
@@ -30,4 +35,79 @@ body {
 fieldset label{
     /* Make input form vertical */
     display: block;
+}
+
+
+
+/* Below this is for the dropdown system*/
+
+div#headermenusystem{ 
+   
+}
+div#headermenusystem > div
+{ float:left; 
+  
+}
+div.dropmenus {
+    display:none;
+    position:absolute;
+    top:175px;
+    margin-left: 320px;
+    width:100px;
+    background:#2f8be8;
+    z-index:2;
+    padding:4px;
+    border:#0385CB 3px solid;
+    border-top:none;
+    -moz-border-radius:0px 0px 8px 8px;
+    border-radius:0px 0px 8px 8px;
+}
+div.dropmenus > a {
+    display:block;
+    margin:4px;
+    padding:7px;
+    font-size:14px;
+    text-decoration:none;
+    background:#E8E8E8;
+    border:#666 1px solid;
+    -moz-border-radius:3px; 
+    border-radius:3px; 
+    color:#000;
+}
+div.dropmenus > a:hover {
+    background:#FFF;
+    border:#06F 1px solid; 
+    color: #06F;
+}
+
+div#dropmenu1{
+    left:24px;
+}
+
+#menu{
+    list-style: none;
+    font-family: Arial;
+    font-size: 12px;
+    background: #2f8be8;
+    width: 800px;
+}
+
+#menu ul li {
+    
+    display: inline;
+}
+
+#menu li a{
+    text-decoration: none;
+    text-decoration-color: white;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    
+}
+
+.logo{
+    
+    
+    margin-left: 250px;
 }

@@ -13,26 +13,46 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet library="css" name="normalize.css"  />
         <h:outputStylesheet library="css" name="layout.css"  />
-        <h:outputStylesheet library="css" name="style.css"  />
+        <h:outputStylesheet library="css" name="style.css"  />  
         <title>MadeInItaly</title>
+        <script type="text/javascript" src="jsf/fadeEffects.js"></script>
+        <script type="text/javascript">
+            var ma = ["dropmenu1"];
+            function dropMenu(x){
+                for (var m in ma) {
+                    if(ma[m] != x){
+                    document.getElementById(ma[m]).style.display = "none";
+                    }
+                }
+            if(document.getElementById(x).style.display == 'block'){
+                fadeOut(x);
+            } else {
+                fadeIn(x);
+              }
+            }
+        </script>
+        <h:graphicImage class="logo" value="/resources/images/logo.png" />
     </h:head>
     <h:body>
-        <header>
-            <hgroup>
-                <h:link outcome="home"><h:graphicImage value="/resources/images/logo.png" /></h:link>
-            <nav class="menu"> 
-            <ul>          
-                <li><h:button outcome="products" value="Products" class="button" /></li>        
-                <li><h:button outcome="customers" value="Customers" class="button" /></li>
-                <li><h:button outcome="orders" value="Orders" class="button" /></li>    
-            </ul>
-        </nav>
-            </hgroup>
-        </header>
-        
-        <div id="content" class="right_content">
-           
-            <ui:insert name="content">Content</ui:insert>
+       
+        <div id="page">
+              <div id="headermenusystem">
+                  <div id="menu">  
+                        <ul>          
+                          <li><a href="index.xhtml">Home</a></li>
+                          <li><a href="#" onclick="return false;" onmousedown="dropMenu('dropmenu1')">Products</a></li>
+                            <div id="dropmenu1" class="dropmenus">
+                                    <a href="services.php?x=pool">New In</a>
+                                    <a href="services.php?x=yard">Collection</a>
+                                    <a href="services.php?x=pest"></a>
+                            </div>
+                          <li><a href="test.php">Extra</a></li>  
+                          <li><a href="test.php">Login</a></li>
+                          </ul>
+                  </div>
+                   
+             </div>
+             
         </div>
         <footer>
             <p>Brings you quality</p> 
