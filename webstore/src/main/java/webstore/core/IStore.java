@@ -3,8 +3,8 @@ package webstore.core;
 
 
 /**
- * Public interface for the shop
- * @author hajo
+ * Interface for the Store
+ * @author Jonas Ha
  */
 
 public interface IStore {

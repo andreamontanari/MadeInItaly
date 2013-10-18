@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 /**
  *
- * Shop is a container for other containers NOTE: Uses Java 1.7
+ * JPAStore
  *
- * @author hajo
+ * @author Jonas Ha
  */
 
 public class JPAStore implements IStore, Serializable {

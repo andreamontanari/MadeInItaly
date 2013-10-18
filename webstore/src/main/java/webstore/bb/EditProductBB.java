@@ -16,7 +16,7 @@ import webstore.core.ProductCatalogue;
 /**
  * 
  *
- * @author hajo
+ * @author Jonas Ha
  */
 @Named("editProduct")
 @ConversationScoped
