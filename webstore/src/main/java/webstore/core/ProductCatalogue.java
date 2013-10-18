@@ -1,16 +1,14 @@
 package webstore.core;
 
 import webstore.utils.AbstractDAO;
-import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 /**
  *
- * @author hajo
+ * @author Jonas Ha
  */
 @Named
 @RequestScoped

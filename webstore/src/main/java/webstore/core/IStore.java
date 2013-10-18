@@ -10,4 +10,7 @@ package webstore.core;
 public interface IStore {
 
     public IProductCatalogue getProductCatalogue();
+    
+    public IReservationRegistry getReservationRegistry();
+   
 }

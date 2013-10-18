@@ -5,8 +5,8 @@ import webstore.utils.IDAO;
 import java.util.List;
 
 /**
- * Interface to product catalogue
- * @author hajo
+ * Interface for the ReservationRegistry
+ * @author Jonas Ha
  */
 public interface IProductCatalogue extends IDAO<Product, Long> {
 

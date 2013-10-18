@@ -1,6 +1,7 @@
 
 package webstore.bb;
 
+import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -13,17 +14,16 @@ import webstore.core.Product;
 import webstore.core.ProductCatalogue;
 
 /**
- * Backing bean for addPerson page
+ * 
  *
  * @author hajo
  */
-@Named("addProduct")
-@RequestScoped
+@Named("editProduct")
+@ConversationScoped
 public class EditProductBB extends ConversationalBase{
 
     @Override
     protected void execute() {
-        
-        getProductCatalogue().update(new Product(getId(), getName(), new Double(getPrice())));
+        getProductCatalogue().update(new Product(getId(), getName(), getQuantity(), new Double(getPrice())));
     }
 }

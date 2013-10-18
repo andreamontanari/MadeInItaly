@@ -19,9 +19,13 @@
                         <h:outputText value="Name" />
                         <h:inputText id="name" value="#{addProduct.name}"/>
                         <h:message for="name" />
+                        <h:outputText value="Quantity" />
+                        <h:inputText id="quantity" value="#{addProduct.quantity}"/>
+                        <h:message for="quantity" />
                         <h:outputText value="Price" />
                         <h:inputText id="price" value="#{addProduct.price}"/>
                         <h:message for="price" />
+                        <h:message for="reservations" />
                     </h:panelGrid>
                     <h:button outcome="products" value="Cancel"/>                   
                     <h:commandButton action="#{addProduct.save}"   value="Save" />

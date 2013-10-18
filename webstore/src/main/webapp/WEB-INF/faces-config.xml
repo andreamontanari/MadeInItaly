@@ -44,6 +44,10 @@
             <from-outcome>del</from-outcome>
             <to-view-id>/jsf/products/delProduct.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>res</from-outcome>
+            <to-view-id>/jsf/reservations/addReservation.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule> 
         <!-- AddProduct pages -->
     <navigation-rule>
