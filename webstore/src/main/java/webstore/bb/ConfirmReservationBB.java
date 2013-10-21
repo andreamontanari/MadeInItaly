@@ -8,8 +8,9 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
 
 /**
- *
- * @author Moe
+ * Backing Bean for the Confirm Reservation Page
+ * 
+ * @author Jonas Ha
  */
 @Named("confirmReservation")
 @ConversationScoped

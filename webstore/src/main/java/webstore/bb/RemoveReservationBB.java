@@ -9,8 +9,9 @@ import javax.inject.Named;
 import webstore.core.Product;
 
 /**
- *
- * @author Moe
+ * Backing Bean for the Remove Reservation Page
+ * 
+ * @author Jonas Ha
  */
 @Named("removeReservation")
 @ConversationScoped

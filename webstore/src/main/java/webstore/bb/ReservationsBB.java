@@ -13,6 +13,7 @@ import webstore.core.JPAStore;
 import webstore.core.Reservation;
 
 /**
+ * ReservationBB for Reservation Page
  *
  * @author Jonas Ha
  */

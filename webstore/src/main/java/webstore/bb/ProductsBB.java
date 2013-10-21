@@ -8,18 +8,18 @@ import webstore.core.Product;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import webstore.core.JPAStore;
 
 /**
- * Must have in session scope, has state (in ContainerNavigator)!
- * @author hajo
+ * Backing Bean for Product Page
+ * 
+ * @author Jonas Ha
  */
 @Named("products")
-@RequestScoped // NOTE enterprise package, else disaster!!!
+@RequestScoped 
 public class ProductsBB implements Serializable{
 
 

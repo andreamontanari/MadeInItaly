@@ -15,7 +15,7 @@ import javax.persistence.criteria.Root;
  *
  * T is type for items in container K is type of id (primary key)
  *
- * @author hajo
+ * @author hajo rewritten by Jonas Ha
  */
 public abstract class AbstractDAO<T, K>
         implements IDAO<T, K> {

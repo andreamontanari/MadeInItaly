@@ -1,4 +1,3 @@
-
 package webstore.utils;
 
 import java.io.Serializable;
@@ -9,9 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Base class for all entities (later to be stored in database), 
- * Product, Order, etc
- * @author hajo
+ * Base class for all entities  
+ * 
+ * @author hajon rewritten by Jonas Ha
  */
 @MappedSuperclass
 public abstract class AbstractEntity implements Serializable{

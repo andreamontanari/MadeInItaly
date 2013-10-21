@@ -5,8 +5,9 @@ import javax.persistence.Entity;
 import webstore.utils.AbstractEntity;
 
 /**
- *
- * @author hajon
+ *  An Account
+ * 
+ * @author Jonas Ha
  */
 @Entity
 public class Account extends AbstractEntity {

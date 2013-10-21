@@ -14,8 +14,8 @@ import webstore.core.Product;
 import webstore.core.ProductCatalogue;
 
 /**
+ * Backing Bean for the Edit Product Page
  * 
- *
  * @author Jonas Ha
  */
 @Named("editProduct")

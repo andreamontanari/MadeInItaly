@@ -5,8 +5,9 @@
 package webstore.bb;
 
 /**
- *
- * @author Moe
+ *  Backing Bean for the Add User Account Page
+ * 
+ * @author Jonas Ha
  */
 
 import webstore.bb.Navigation;

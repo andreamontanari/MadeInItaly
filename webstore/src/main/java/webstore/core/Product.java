@@ -1,21 +1,25 @@
 package webstore.core;
 
+import javax.persistence.Basic;
 import webstore.utils.AbstractEntity;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Lob;
 
 
 
 /**
  * A Product
- * @author 
+ * 
+ * @author Jonas Ha
  */
 @Entity
 public class Product extends AbstractEntity {
-    
+   
     private String name;
     private int quantity;
     private double price;
-    
+       
     public Product() {
     }
     
@@ -23,7 +27,6 @@ public class Product extends AbstractEntity {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-     
     }
 
     public Product(Long id, String name, int quantity, double price) {
@@ -31,7 +34,6 @@ public class Product extends AbstractEntity {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-       
     }
 
     public String getName() {
@@ -44,5 +46,5 @@ public class Product extends AbstractEntity {
     
     public double getPrice() {
         return price;
-    }   
+    }  
 }

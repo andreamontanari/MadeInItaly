@@ -11,8 +11,9 @@ import javax.persistence.EntityManager;
 import webstore.utils.AbstractDAO;
 
 /**
- *
- * @author Moe
+ *  AccountRegistry
+ * 
+ * @author Jonas Ha
  */
 @Named
 @RequestScoped

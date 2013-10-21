@@ -16,7 +16,7 @@ import webstore.core.Reservation;
 /**
  * 
  *
- * @author Jonas Ha
+ * @author hajon rewritten by Jonas Ha
  */
 public abstract class ConversationalBase implements Serializable {
 

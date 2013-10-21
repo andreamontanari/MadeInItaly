@@ -23,16 +23,6 @@ public final class ReservationRegistry extends AbstractDAO<Reservation, Long> im
         return new ReservationRegistry(puName);
     }
 
-    @Override
-    public List<Reservation> getByName(String name) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction();
-        List<Reservation> found = em.createQuery("SELECT m FROM Product m WHERE m.name =" + name).getResultList();
-        em.close();
-        return found;
-
-    }
-
     public Reservation getById(Long id) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction();
