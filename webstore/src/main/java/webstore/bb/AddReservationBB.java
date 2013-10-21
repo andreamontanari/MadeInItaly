@@ -8,6 +8,7 @@ import javax.validation.constraints.Pattern;
 import webstore.core.JPAStore;
 import webstore.core.Product;
 import webstore.core.Reservation;
+import webstore.utils.SendMail;
 
 /**
  * Backing bean for Add Reservation page
@@ -33,6 +34,7 @@ public class AddReservationBB extends ConversationalBase {
        if(getProduct().getQuantity() <= 0){
           return Navigation.RESERVATION_FAIL.toString();
        }
+
        jpa.getProductCatalogue().update(new Product(getProduct().getId(), getProduct().getName(), (getProduct().getQuantity())-1, getProduct().getPrice()));
        return Navigation.RESERVATION_SUCCESS.toString();
    }        

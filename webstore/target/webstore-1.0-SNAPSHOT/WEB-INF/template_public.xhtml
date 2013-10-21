@@ -17,62 +17,75 @@
         <h:outputStylesheet library="css" name="layout.css"  />
         <h:outputStylesheet library="css" name="style.css"  />
         <title>Made In Italy</title>
+        <script type="text/javascript">
+            function handleLoginRequest(xhr, status, args) {
+                if (args.validationFailed || !args.loggedIn) {
+                    PF('dlg').jq.effect("shake", {times: 5}, 100);
+                }
+                else {
+                    PF('dlg').hide();
+                    $('#loginLink').fadeOut();
+                }
+            }
+        </script>  
     </h:head>
     <h:body>
         <header>
             <hgroup>
                 <h:link outcome="HOME"><h:graphicImage value="/resources/images/logo.png" /></h:link>
-                <nav class="menu"> 
-                    <ul>          
-                        <li><h:button outcome="PRODUCTS_PUBLIC" value="Products" class="button" /></li>        
-                                               <li><h:button outcome="LOGIN" value="Login" class="button" /></li>
+                <nav class="menu">
 
-                        <h:form id="form">  
-                            <h:outputLink id="loginLink" value="javascript:void(0)" onclick="PF('dlg').show()" title="login">   
-                                <p:graphicImage value="/images/login.png" />  
-                            </h:outputLink>  
+                    <h:form>      
+                        <p:menubar>  
+                            <p:submenu label="Products" icon="ui-icon-suitcase">  
+                                <p:menuitem value="All Products" outcome="PRODUCTS_PUBLIC" />  
+                            </p:submenu>  
+                            <p:menuitem value="About Us" outcome="PRODUCTS_PUBLIC" icon="ui-icon-help" />  
 
-                            <p:growl id="growl" showDetail="true" life="3000" />  
+                            <p:submenu label="Stores" icon="ui-icon-home">  
+                                <p:menuitem value="Stockholm"  />  
+                                <p:menuitem value="Gothenburg"/>  
+                                <p:menuitem value="Malmoe" />  
+                            </p:submenu>  
+                                   <p:menuitem onclick="PF('dlg').show()" icon="ui-icon-locked" />  
+                        </p:menubar>  
 
-                            <p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false">  
+                    </h:form>
 
-                                <h:panelGrid columns="2" cellpadding="5">  
-                                    <h:outputLabel for="username" value="Username:" />  
-                                    <p:inputText value="#{LoginBean.username}"   
-                                                 id="username" required="true" label="username" />  
+                    <!-- POPUP LOGIN -->
+                    <h:form id="form">  
 
-                                    <h:outputLabel for="password" value="Password:" />  
-                                    <h:inputSecret value="#{LoginBean.password}"   
-                                                   id="password" required="true" label="password" />  
 
-                                    <f:facet name="footer">  
-                                        <p:commandButton id="loginButton" value="Login" update="growl"   
-                                                         action="#{LoginBean.loginWebstore()}"   
-                                                         oncomplete="handleLoginRequest(xhr, status, args)"/>  
-                                    </f:facet>  
-                                </h:panelGrid>  
-                            </p:dialog>  
-                        </h:form>  
-                        
-            </ul>
-        </nav>
+                        <p:growl id="growl" showDetail="true" life="3000" />  
+
+                        <p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false">  
+
+                            <h:panelGrid columns="2" cellpadding="2">  
+                                <h:outputLabel for="username" value="Username:" />  
+                                <p:inputText value="#{LoginBean.username}"   
+                                             id="username" required="true" label="username" />  
+
+                                <h:outputLabel for="password" value="Password:" />  
+                                <h:inputSecret value="#{LoginBean.password}"   
+                                               id="password" required="true" label="password" />  
+
+                                <f:facet name="footer">  
+                                    <p:commandButton id="loginButton" value="Login" update="growl"   
+                                                     action="#{LoginBean.loginWebstore}"   
+                                                     oncomplete="handleLoginRequest(xhr, status, args)"/>  
+                                </f:facet>  
+                            </h:panelGrid>  
+                        </p:dialog>  
+                    </h:form>  
+
+                </nav>
             </hgroup>
         </header>
 
-        <script type="text/javascript">  
-    function handleLoginRequest(xhr, status, args) {  
-        if(args.validationFailed || !args.loggedIn) {  
-            PF('dlg').jq.effect("shake", { times:5 }, 100);  
-        }   
-        else {  
-            PF('dlg').hide();  
-            $('#loginLink').fadeOut();  
-        }  
-    }  
-        </script>  
-        
+
+
         <div id="content" class="right_content">
-           
+
             <ui:insert name="content">Content</ui:insert>
         </div>
         <footer>

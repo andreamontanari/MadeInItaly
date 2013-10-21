@@ -36,7 +36,7 @@
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText  value="Price"/>
+                                    <h:outputText  value="Price ($)"/>
                                 </f:facet>
                                 <h:outputText value="#{p.price}"/>
                             </p:column>
@@ -52,8 +52,6 @@
                             </p:column>
                         </p:dataTable>
                      </p:panel>
-                     <p:commandButton action="#{LoginBean.logout}" value="Logout"  ajax="false"></p:commandButton>
-
                 </h:form>
 
                 

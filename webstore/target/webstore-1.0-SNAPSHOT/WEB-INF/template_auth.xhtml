@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <!--
     
@@ -19,19 +20,27 @@
     <h:body>
         <header>
             <hgroup>
-                <h:link outcome="HOME"><h:graphicImage value="/resources/images/logo.png" /></h:link>
-            <nav class="menu"> 
-            <ul>          
-                <li><h:button outcome="PRODUCTS_AUTH" value="Products" class="button" /></li>        
-                <li><h:button outcome="RESERVATIONS_AUTH" value="Reservations" class="button" /></li>
-                
-            </ul>
-        </nav>
+                <h:link outcome="PRODUCTS_AUTH"><h:graphicImage value="/resources/images/logo.png" /></h:link>
+                <nav class="menu">
+
+                    <h:form>      
+                        <p:menubar>  
+                            <p:submenu label="Products" icon="ui-icon-suitcase">  
+                                <p:menuitem value="All Products" outcome="PRODUCTS_AUTH" />  
+                            </p:submenu>  
+                            <p:menuitem value="Reservations" outcome="RESERVATIONS_AUTH" icon="ui-icon-note" />  
+
+                            <p:menuitem value="Logout" action="#{LoginBean.logout}" icon="ui-icon-unlocked" />  
+                        </p:menubar>  
+
+                    </h:form>
+                </nav>
             </hgroup>
+
         </header>
-        
+
         <div id="content" class="right_content">
-           
+
             <ui:insert name="content">Content</ui:insert>
         </div>
         <footer>
