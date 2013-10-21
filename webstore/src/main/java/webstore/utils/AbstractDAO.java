@@ -1,6 +1,5 @@
 package webstore.utils;
 
-import webstore.core.Product;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -11,8 +10,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
- * A container for entities, base class for OrderBook, ProductCatalogue,
- * CustomerRegistry The fundamental common operations are here (CRUD).
+ * 
+ * CRUD operations, abstract class 
  *
  * T is type for items in container K is type of id (primary key)
  *
@@ -22,7 +21,7 @@ public abstract class AbstractDAO<T, K>
         implements IDAO<T, K> {
 
     protected final transient EntityManagerFactory emf;
-    private final Class<T> clazz;
+    private final Class<T> clazz; 
 
     protected AbstractDAO(Class<T> clazz, String puName) {
         this.clazz = clazz;
@@ -41,10 +40,9 @@ public abstract class AbstractDAO<T, K>
             em.persist(t);
             em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             if (em != null) {
-                em.close();  // ... and destroy
+                em.close();  
             }
         }
     }
@@ -59,7 +57,6 @@ public abstract class AbstractDAO<T, K>
             em.remove(t);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            ex.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();
@@ -77,7 +74,6 @@ public abstract class AbstractDAO<T, K>
             up = em.merge(t);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            ex.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();
@@ -108,7 +104,6 @@ public abstract class AbstractDAO<T, K>
 
             found.addAll(q.getResultList());
         } catch (Exception ex) {
-            ex.printStackTrace();
         } finally {
             em.close();
         }
@@ -134,23 +129,19 @@ public abstract class AbstractDAO<T, K>
     }
  
     @Override
-    public List<T> getAll(boolean all, int start, int count) {
+    public List<T> getAll() {
         EntityManager em = emf.createEntityManager();
-        List<T> products = new ArrayList<>();
+        List<T> found = new ArrayList<>();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Product.class));
+            cq.select(cq.from(clazz));
             Query q = em.createQuery(cq);
-            if (!all) {
-                q.setMaxResults(count);
-                q.setFirstResult(start);
-            }
-            products.addAll(q.getResultList());
+            found.addAll(q.getResultList());
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
             em.close();
         }
-        return products;
+        return found;
     }
 }

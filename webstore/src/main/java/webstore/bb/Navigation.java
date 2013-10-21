@@ -9,5 +9,8 @@ package webstore.bb;
  * @author hajo
  */
 public enum Navigation {
-    PRODUCT_SUCCESS;
+    PRODUCT_SUCCESS,
+    PRODUCT_FAIL,
+    RESERVATION_SUCCESS,
+    RESERVATION_FAIL;
 }

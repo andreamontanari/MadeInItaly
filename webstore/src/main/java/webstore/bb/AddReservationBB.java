@@ -27,12 +27,15 @@ public class AddReservationBB extends ConversationalBase {
     private String reserverMail;
 
    @Override
-    protected void execute() {
+    protected String execute() {
        Reservation r = new Reservation(reserverName, reserverMail, getProduct());
        jpa.getReservationRegistry().add(r);
+       if(getProduct().getQuantity() <= 0){
+          return Navigation.RESERVATION_FAIL.toString();
+       }
+       jpa.getProductCatalogue().update(new Product(getProduct().getId(), getProduct().getName(), (getProduct().getQuantity())-1, getProduct().getPrice()));
+       return Navigation.RESERVATION_SUCCESS.toString();
    }        
-    
-
     public String getReserverName() {
         return reserverName;
     }

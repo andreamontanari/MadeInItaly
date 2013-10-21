@@ -37,15 +37,26 @@ public abstract class ConversationalBase implements Serializable {
             conversation.begin();
         }
         Product p = jpa.getProductCatalogue().find(Long.valueOf(id));
-        this.product = p;
-        
+        this.product = p;   
         this.id = p.getId();
         this.name = p.getName();
-       // this.reservations = p.getReservations();
         this.quantity = p.getQuantity();
         this.price = String.valueOf(p.getPrice());
     }
 
+    public void setSelectedR(String id1, String id2) {
+        if (conversation.isTransient()) {
+            conversation.begin();
+        }
+        Reservation r  = jpa.getReservationRegistry().find(Long.valueOf(id1));
+        Product p = jpa.getProductCatalogue().find(Long.valueOf(id2));
+
+        this.id = r.getId();
+        this.product = p;
+
+    }
+
+        
     @PreDestroy  // Must have for back button etc.
     public void destroy() {
         if (!conversation.isTransient()) {
@@ -57,13 +68,11 @@ public abstract class ConversationalBase implements Serializable {
         if (!conversation.isTransient()) {
             conversation.end();
         }
-
-        execute();
-        return "products";
+        return execute();
     }
 
     // Implemented by subclasses
-    protected abstract void execute();
+    protected abstract String execute();
 
     protected IProductCatalogue getProductCatalogue() {
         return jpa.getProductCatalogue();

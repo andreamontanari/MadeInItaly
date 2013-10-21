@@ -8,7 +8,8 @@ import javax.inject.Named;
 public class DelProductBB extends ConversationalBase{
 
     @Override
-    protected void execute() {
+    protected String execute() {
         getProductCatalogue().remove(getId());
+        return "products";
     }
 }

@@ -27,6 +27,6 @@ public interface IDAO<T, K> {
 
     public int getCount();
     
-    public List<T> getAll(boolean all, int start, int count);
+    public List<T> getAll();
     
 }

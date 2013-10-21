@@ -5,12 +5,12 @@ import webstore.utils.IDAO;
 import java.util.List;
 
 /**
- * Interface to product catalogue
+ * Interface to reservation registry
  * @author hajo
  */
 public interface IReservationRegistry extends IDAO<Reservation, Long> {
 
-    public List<Product> getByName(String name);
+    public List<Reservation> getByName(String name);
 
 
      

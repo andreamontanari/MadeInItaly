@@ -1,6 +1,7 @@
 package webstore.bb;
 import java.util.ArrayList;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.DecimalMax;
@@ -8,7 +9,6 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import webstore.core.JPAStore;
 import webstore.core.Product;
-import webstore.core.Reservation;
 
 /**
  * Backing Bean for the Add Product Page
@@ -29,9 +29,7 @@ public class AddProductBB {
     @DecimalMin(value = "0.00", message = "Price must be 0 - 100000 (possible 2 decimals)")
     @DecimalMax(value = "100000.00", message = "Price must be 0 - 100000 (possible 2 decimals)")
     private String price;
-    
-
-
+   
     public String save() {
         Product p = new Product(name, quantity, Double.valueOf(price));
         jpa.getProductCatalogue().add(p);

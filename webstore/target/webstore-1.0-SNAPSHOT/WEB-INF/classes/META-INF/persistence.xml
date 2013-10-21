@@ -4,7 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>webstore.core.Product</class>
     <class>webstore.core.Reservation</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <class>webstore.mb.Account</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/store"/>
       <property name="javax.persistence.jdbc.password" value="store"/>

@@ -8,6 +8,7 @@ import webstore.core.Product;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -21,12 +22,12 @@ import webstore.core.JPAStore;
 @RequestScoped // NOTE enterprise package, else disaster!!!
 public class ProductsBB implements Serializable{
 
+
     @Inject
     private JPAStore jpa;
     
     public List<Product> getAll(){
-        jpa = new JPAStore();
-        return jpa.getProductCatalogue().getAll(true, 0, 0);
+        return jpa.getProductCatalogue().getAll();
     }
     public String navigate(String target) {
         return target;

@@ -1,10 +1,8 @@
 package webstore.core;
 
-import java.util.List;
 import webstore.utils.AbstractEntity;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
 
 
 /**

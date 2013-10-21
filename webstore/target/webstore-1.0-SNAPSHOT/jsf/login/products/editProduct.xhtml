@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Made In Italy</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template_auth.xhtml">
+            <br />
+            <ui:define name="content">
+                <h:form>
+                    <p:panel header="Edit Product">
+                    <p:panelGrid columns="3">
+                        <h:outputText value="Id" />
+                        <p:inputText id="id" value="#{editProduct.id}" disabled="true"/>
+                        <p:message for="id" />
+                        <h:outputText value="Name" />
+                        <p:inputText id="name" value="#{editProduct.name}"/>
+                        <p:message for="name" />
+                        <h:outputText value="Quantity" />
+                        <p:inputText id="quantity" value="#{editProduct.quantity}"/>
+                        <p:message for="quantity" />
+                        <h:outputText value="Price" />
+                        <p:inputText id="price" value="#{editProduct.price}"/>
+                        <p:message for="price" />
+                    </p:panelGrid>
+                    <p:button outcome="products" value="Cancel"/>                   
+                    <p:commandButton action="#{editProduct.actOnSelected}"   value="Edit" />
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
