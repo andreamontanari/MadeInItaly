@@ -44,7 +44,7 @@
             <from-outcome>MALMO_STORE</from-outcome>
             <to-view-id>/jsf/public/stores/malmostore.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
+      </navigation-rule>
 
     
             

@@ -26,13 +26,13 @@
                             <p:password id="pword2" value="#{addAccount.password}" label="Password 2" required="true"/>  
                             
                             <p:button outcome="PRODUCTS_AUTH" value="Cancel"/>                   
-                            <p:commandButton action="#{addAccount.add}" value="Create">
-
+                            <p:commandButton action="#{addAccount.add}"  value="Create">
+                                <p:confirm header="Confirmation" message="User Created" icon="ui-icon-alert" />  
                             </p:commandButton> 
 
                             <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">  
-                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>       
-                            </p:confirmDialog> 
+                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>       
+                            </p:confirmDialog>  
                             
                         </p:panelGrid>
                     </p:panel>
