@@ -32,7 +32,7 @@ public class AddProductBB {
     public String save() {
         Product p = new Product(name, quantity, Double.valueOf(price));
         jpa.getProductCatalogue().add(p);
-        return Navigation.PRODUCT_SUCCESS.toString();  // TODO
+        return Navigation.PRODUCT_SUCCESS.toString(); 
     }
 
     public String getName() {

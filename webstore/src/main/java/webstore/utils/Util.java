@@ -1,4 +1,4 @@
-package webstore.mb;
+package webstore.utils;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
