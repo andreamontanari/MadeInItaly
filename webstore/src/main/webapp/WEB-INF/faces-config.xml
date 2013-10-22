@@ -32,6 +32,18 @@
             <from-outcome>ABOUT_US</from-outcome>
             <to-view-id>/jsf/public/aboutus.xhtml</to-view-id>  
         </navigation-case>
+        <navigation-case>
+            <from-outcome>GOTHENBURG_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/gothenburgstore.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>STOCKHOLM_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/stockholmstore.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>MALMO_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/malmostore.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
     

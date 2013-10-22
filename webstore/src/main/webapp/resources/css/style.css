@@ -59,7 +59,7 @@ thead {
 }
 
 table, thead, td {
-    border-width: 1px;
+    border-width: 0px;
     border-collapse: collapse;
     border-style: solid;
     padding: 4px;
