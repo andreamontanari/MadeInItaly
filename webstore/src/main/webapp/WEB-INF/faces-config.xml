@@ -28,6 +28,10 @@
             <from-outcome>ADD_USER</from-outcome>
             <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
         </navigation-case>
+        <navigation-case>
+            <from-outcome>ABOUT_US</from-outcome>
+            <to-view-id>/jsf/public/aboutus.xhtml</to-view-id>  
+        </navigation-case>
     </navigation-rule>
 
     
