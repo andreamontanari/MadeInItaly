@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <application>
+	  <message-bundle>
+	  	<!-- If customizing messages -->
+	  </message-bundle>
+     </application>
+    <!-- Main menu on all pages -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id> 
+        <navigation-case>
+            <from-outcome>HOME</from-outcome>
+            <to-view-id>jsf/public/index.xhtml</to-view-id>
+        </navigation-case>
+    <navigation-case>
+            <from-outcome>PRODUCTS_PUBLIC</from-outcome>
+            <to-view-id>jsf/public/products/products.xhtml</to-view-id>
+        </navigation-case>    
+        <navigation-case>
+            <from-outcome>LOGIN</from-outcome>
+            <to-view-id>jsf/login/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ADD_USER</from-outcome>
+            <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ABOUT_US</from-outcome>
+            <to-view-id>/jsf/public/aboutus.xhtml</to-view-id>  
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>GOTHENBURG_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/gothenburgstore.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>STOCKHOLM_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/stockholmstore.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>MALMO_STORE</from-outcome>
+            <to-view-id>/jsf/public/stores/malmostore.xhtml</to-view-id>
+        </navigation-case>
+      </navigation-rule>
+
+    
+            
+    <!-- PUBLIC PRODUCT PAGE -->
+    <navigation-rule>
+    <from-view-id>jsf/public/products/products.xhtml</from-view-id> 
+        <navigation-case>
+            <from-outcome>res</from-outcome>
+            <to-view-id>jsf/public/reservation/addReservation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- PUBLIC RESERVATION, CONFIRM & FAIL -->
+    <navigation-rule>
+    <from-view-id>jsf/public/reservation/addReservation.xhtml</from-view-id> 
+        <navigation-case>
+            <from-outcome>RESERVATION_SUCCESS</from-outcome>
+            <to-view-id>/jsf/public/reservation/reservation_confirm.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    <navigation-rule>
+        <from-view-id>/jsf/login/reservations/reservations.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>RESERVATION_FAIL</from-outcome>
+            <to-view-id>/jsf/public/reservation/reservation_fail.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+
+
+
+<!--                         LOGIN, SUCCESS & FAIL                            -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>LOGIN_SUCCESS</from-outcome>
+            <to-view-id>/jsf/login/products/products.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case>
+            <from-outcome>LOGIN_FAIL</from-outcome>
+            <to-view-id>/jsf/login/login.xhtml</to-view-id>  
+        </navigation-case> 
+    </navigation-rule>
+    
+ 
+<!--                            LOGGED IN                                    -->
+   
+    <navigation-rule>
+        <from-view-id>jsf/login/*</from-view-id> 
+        <navigation-case>
+            <from-outcome>PRODUCTS_AUTH</from-outcome>
+            <to-view-id>jsf/login/products/products.xhtml</to-view-id>
+        </navigation-case>    
+        <navigation-case>
+            <from-outcome>RESERVATIONS_AUTH</from-outcome>
+            <to-view-id>jsf/login/reservations/reservations.xhtml</to-view-id>
+        </navigation-case>   
+        <navigation-case>
+            <from-outcome>LOGOUT_SUCCESS</from-outcome>
+            <to-view-id>/jsf/public/index.xhtml</to-view-id>  
+        </navigation-case> 
+        <navigation-case>
+            <from-outcome>ADD_USER</from-outcome>
+            <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- PRODUCT PAGES -->
+    <navigation-rule>
+        <from-view-id>/jsf/login/products/products.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>add</from-outcome>
+            <to-view-id>/jsf/login/products/addProduct.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/jsf/login/products/editProduct.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>del</from-outcome>
+            <to-view-id>/jsf/login/products/delProduct.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    
+       <!-- RERSERVATION PAGES -->
+    <navigation-rule>
+        <from-view-id>/jsf/login/reservations/reservations.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>confirm</from-outcome>
+            <to-view-id>/jsf/login/reservations/confirm_reservation.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>remove</from-outcome>
+            <to-view-id>/jsf/login/reservations/remove_reservation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    <!-- ADDPRODUCT PAGES -->
+    <navigation-rule>
+        <from-view-id>/jsf/login/products/addProduct.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>PRODUCT_SUCCESS</from-outcome>
+            <to-view-id>/jsf/login/products/products.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+</faces-config>

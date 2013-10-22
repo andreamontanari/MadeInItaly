@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!--
+    
+      THIS IS THE OVERALL LAYOUT FOR THE SITE (not accessible from outside)
+    
+    -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="layout.css"  />
+        <h:outputStylesheet library="css" name="style.css"  />
+        <title>Made In Italy</title>
+        <script type="text/javascript">
+            function handleLoginRequest(xhr, status, args) {
+                if (args.validationFailed || !args.loggedIn) {
+                    PF('dlg').jq.effect("shake", {times: 5}, 100);
+                }
+                else {
+                    PF('dlg').hide();
+                    $('#loginLink').fadeOut();
+                }
+            }
+        </script>  
+    </h:head>
+    <h:body>
+        <header>
+            <hgroup>
+                <h:link outcome="HOME"><h:graphicImage value="/resources/images/logo.png" /></h:link>
+                <nav class="menu">
+                    <h:form>      
+                        <p:menubar>  
+                            <p:submenu label="Products" icon="ui-icon-suitcase">  
+                                <p:menuitem value="All Products" outcome="PRODUCTS_PUBLIC" />  
+                            </p:submenu>  
+                            <p:menuitem value="About Us" outcome="ABOUT_US" icon="ui-icon-help" />  
+                            <p:submenu label="Stores" icon="ui-icon-home">  
+                                <p:menuitem value="Gothenburg" outcome="GOTHENBURG_STORE"/>
+                                <p:menuitem value="Stockholm" outcome="STOCKHOLM_STORE" />  
+                                <p:menuitem value="Malmoe" outcome ="MALMO_STORE" />  
+                            </p:submenu>  
+                            <p:menuitem onclick="PF('dlg').show()" icon="ui-icon-locked" />  
+                        </p:menubar>  
+                    </h:form>
+                </nav>
+            </hgroup>  
+        </header>
+        <div id="content" class="right_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <footer>
+            <p>Brings you quality</p> 
+        </footer>
+                <!-- POPUP LOGIN -->
+            <h:form id="form">  
+                <p:growl id="growl" showDetail="true" life="3000" />  
+                <p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false">  
+                    <p:panelGrid columns="2">  
+                        <p:outputLabel for="username" value="Username:" />  
+                        <h:inputText value="#{LoginBean.username}"   
+                                     id="username" required="true" label="username" />  
+
+                        <p:outputLabel for="password" value="Password:" />  
+                        <h:inputSecret value="#{LoginBean.password}"   
+                                       id="password" required="true" label="password" />  
+
+                        <f:facet name="footer">  
+                            <p:commandButton id="loginButton" value="Login" update="growl"   
+                                             action="#{LoginBean.loginWebstore}"   
+                                             oncomplete="handleLoginRequest(xhr, status, args)"/>  
+                        </f:facet>  
+                    </p:panelGrid>  
+                </p:dialog>  
+            </h:form>
+    </h:body>    
+</html>
