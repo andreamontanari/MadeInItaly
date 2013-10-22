@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Add User</title>
     </h:head>
@@ -11,8 +12,41 @@
         <ui:composition template="/WEB-INF/template_auth.xhtml">
             <ui:define name="content">
                 <h:form>
+                      <p:panel header="Users">
+                          <p:dataTable  paginator="false" rows="10" var="ac" value="#{addAccount.all}" >   
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{ac.id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Username"/> 
+                                </f:facet>
+                                <h:outputText value="#{ac.username}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Password"/>
+                                </f:facet>
+                                <h:outputText value="#{ac.password}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText  value="Action"/>
+                                </f:facet>
+                                <p:commandButton actionListener="#{addAccount.remove(ac.id)}" action="USER_DELETED" value="Delete" />
+                            </p:column>
+                        </p:dataTable>
+                     </p:panel>
 
-                    <p:panel header ="Create User Account">
+                </h:form>
+               
+                <p:spacer></p:spacer>
+               
+                <h:form id ="form-addUser">
+                    <p:panel id="addUser" header ="Create User Account">
                         <p:messages id="messages" showDetail="true" autoUpdate="true"/>  
 
                         <p:panelGrid columns="2" id="passwordmatch">
@@ -23,17 +57,12 @@
                             <p:password id="pword1" value="#{addAccount.password}" match="pword2" label="Password" required="true"/>  
                             
                             <h:outputLabel for="pword2" value="Retype Password: " />  
-                            <p:password id="pword2" value="#{addAccount.password}" label="Password 2" required="true"/>  
-                            
-                            <p:button outcome="PRODUCTS_AUTH" value="Cancel"/>                   
-                            <p:commandButton action="#{addAccount.add}"  value="Create">
-                                <p:confirm header="Confirmation" message="User Created" icon="ui-icon-alert" />  
-                            </p:commandButton> 
+                            <p:password id="pword2" value="#{addAccount.password}" label="Retyped password" required="true"/>  
+                                             
+                            <p:commandButton actionListener="#{addAccount.add}" immediate="false" ajax="false" value="Create" update="username">
+                                <p:resetInput target="addUser" />  
+                            </p:commandButton>
 
-                            <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">  
-                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>       
-                            </p:confirmDialog>  
-                            
                         </p:panelGrid>
                     </p:panel>
 

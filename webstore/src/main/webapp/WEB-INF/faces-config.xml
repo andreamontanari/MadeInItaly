@@ -109,6 +109,10 @@
             <from-outcome>ADD_USER</from-outcome>
             <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
         </navigation-case>
+        <navigation-case>
+            <from-outcome>USER_DELETED</from-outcome>
+            <to-view-id>/jsf/login/user_deletion.xhtml</to-view-id>  
+        </navigation-case>
     </navigation-rule>
     
     <!-- PRODUCT PAGES -->
