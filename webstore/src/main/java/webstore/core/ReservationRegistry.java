@@ -10,8 +10,6 @@ import javax.persistence.EntityManager;
  *
  * @author Jonas Ha
  */
-@Named
-@RequestScoped
 public final class ReservationRegistry extends AbstractDAO<Reservation, Long> implements IReservationRegistry {
     
     private ReservationRegistry(String puName) {

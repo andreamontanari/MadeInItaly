@@ -27,7 +27,7 @@ public class AddAccountBB {
     public String add() {
         Account u = new Account(username, password);
         jpa.getAccountRegistry().add(u);
-        return Navigation.ADD_USER_SUCCESS.toString();
+        return Navigation.ADD_USER.toString();
     }
 
     public String getUsername() {

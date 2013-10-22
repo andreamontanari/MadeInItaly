@@ -10,8 +10,6 @@ import javax.persistence.EntityManager;
  * ProductCatalogue
  * @author Jonas Ha
  */
-@Named
-@RequestScoped
 public final class ProductCatalogue extends AbstractDAO<Product, Long> implements IProductCatalogue {
     
     private ProductCatalogue(String puName) {

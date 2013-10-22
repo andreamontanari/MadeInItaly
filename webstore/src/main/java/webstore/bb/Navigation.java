@@ -13,6 +13,5 @@ public enum Navigation {
     PRODUCT_FAIL,
     RESERVATION_SUCCESS,
     RESERVATION_FAIL,
-    ADD_USER_SUCCESS,
-    ADD_USER_FAIL;
+    ADD_USER;
 }
