@@ -4,7 +4,11 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
  
- 
+ /**
+ * Utils to get Session, reqeust and username when someone is logged on
+ * 
+ * @author Jonas Ha
+ */
 public class Util {
  
       public static HttpSession getSession() {

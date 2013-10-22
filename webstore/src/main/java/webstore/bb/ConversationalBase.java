@@ -11,7 +11,7 @@ import webstore.core.Product;
 import webstore.core.Reservation;
 
 /**
- * 
+ * Base class editproduct, delproduct etc
  *
  * @author hajon rewritten by Jonas Ha
  */

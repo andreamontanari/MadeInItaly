@@ -7,7 +7,8 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 /**
- *
+ *  Registry for reservations
+ * 
  * @author Jonas Ha
  */
 public final class ReservationRegistry extends AbstractDAO<Reservation, Long> implements IReservationRegistry {

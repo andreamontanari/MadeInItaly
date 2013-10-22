@@ -1,4 +1,5 @@
 package webstore.bb;
+
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
 

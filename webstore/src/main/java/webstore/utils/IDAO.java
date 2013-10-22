@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Basic contract for containers of Products, Customers, etc
+ * Basic contract for containers of Products, reservations and users
  * 
  * T is type of elements in container
  * K is type of id (primary key)

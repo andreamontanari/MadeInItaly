@@ -1,12 +1,7 @@
 package webstore.core;
 
-import javax.persistence.Basic;
 import webstore.utils.AbstractEntity;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Lob;
-
-
 
 /**
  * A Product

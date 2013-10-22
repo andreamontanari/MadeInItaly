@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Backing Bean for the Confirm Reservation Page
+ * AuthFilter
  *
  * @author Jonas Ha
  */

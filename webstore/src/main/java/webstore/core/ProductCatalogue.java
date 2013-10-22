@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 
 /**
  * ProductCatalogue
+ * 
  * @author Jonas Ha
  */
 public final class ProductCatalogue extends AbstractDAO<Product, Long> implements IProductCatalogue {

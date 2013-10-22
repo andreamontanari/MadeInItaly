@@ -4,7 +4,6 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
 import webstore.core.Product;
 
-
 /**
  * Backing Bean for the Edit Product Page
  * 

@@ -13,7 +13,8 @@ import webstore.core.JPAStore;
 
 
 /**
- * LoginBean
+ * Backing bean for Login
+ * 
  * @author Jonas Ha
  */
 @Named("LoginBean")
