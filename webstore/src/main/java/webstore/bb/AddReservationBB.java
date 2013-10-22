@@ -1,6 +1,6 @@
 package webstore.bb;
+
 import javax.enterprise.context.ConversationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
@@ -8,7 +8,6 @@ import javax.validation.constraints.Pattern;
 import webstore.core.JPAStore;
 import webstore.core.Product;
 import webstore.core.Reservation;
-import webstore.utils.SendMail;
 
 /**
  * Backing bean for Add Reservation page

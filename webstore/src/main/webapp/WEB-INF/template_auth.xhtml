@@ -12,7 +12,7 @@
     -->
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet library="css" name="normalize.css"  />
+       
         <h:outputStylesheet library="css" name="layout.css"  />
         <h:outputStylesheet library="css" name="style.css"  />
         <title>Made In Italy</title>
@@ -30,7 +30,11 @@
                             </p:submenu>  
                             <p:menuitem value="Reservations" outcome="RESERVATIONS_AUTH" icon="ui-icon-note" />  
 
-                            <p:menuitem value="Logout" action="#{LoginBean.logout}" icon="ui-icon-unlocked" />  
+                            <p:submenu icon="ui-icon-unlocked">  
+                                <p:menuitem value="Add User" outcome="ADD_USER" />
+                                <p:menuitem value="Logout" action="#{LoginBean.logout}" />
+                            </p:submenu>
+  
                         </p:menubar>  
 
                     </h:form>

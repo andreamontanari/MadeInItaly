@@ -17,15 +17,6 @@ body {
     padding: 0 0 0 0;
 }
 
-.menu ul li {
-    /* Make menu horizontal */
-    display: inline;  
-}
-
-.submenu ul li {
-    /* Make submenu horizontal */
-    display: block;
-}
 
 fieldset label{
     /* Make input form vertical */

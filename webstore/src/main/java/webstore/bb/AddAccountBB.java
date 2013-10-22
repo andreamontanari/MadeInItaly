@@ -1,20 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package webstore.bb;
 
-/**
- *  Backing Bean for the Add User Account Page
- * 
- * @author Jonas Ha
- */
-
-import webstore.bb.Navigation;
-
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
@@ -38,9 +24,10 @@ public class AddAccountBB {
     @NotNull(message = "Required")
     private String password;
     
-    public void add() {
+    public String add() {
         Account u = new Account(username, password);
         jpa.getAccountRegistry().add(u);
+        return Navigation.ADD_USER_SUCCESS.toString();
     }
 
     public String getUsername() {

@@ -1,7 +1,6 @@
 package webstore.bb;
-import java.util.ArrayList;
+
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.DecimalMax;

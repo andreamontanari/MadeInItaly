@@ -24,6 +24,10 @@
             <from-outcome>LOGIN</from-outcome>
             <to-view-id>jsf/login/login.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>ADD_USER</from-outcome>
+            <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
+        </navigation-case>
     </navigation-rule>
 
     
@@ -77,7 +81,7 @@
             <from-outcome>PRODUCTS_AUTH</from-outcome>
             <to-view-id>jsf/login/products/products.xhtml</to-view-id>
         </navigation-case>    
-                <navigation-case>
+        <navigation-case>
             <from-outcome>RESERVATIONS_AUTH</from-outcome>
             <to-view-id>jsf/login/reservations/reservations.xhtml</to-view-id>
         </navigation-case>   
@@ -85,6 +89,10 @@
             <from-outcome>LOGOUT_SUCCESS</from-outcome>
             <to-view-id>/jsf/public/index.xhtml</to-view-id>  
         </navigation-case> 
+        <navigation-case>
+            <from-outcome>ADD_USER</from-outcome>
+            <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
+        </navigation-case>
     </navigation-rule>
     
     <!-- PRODUCT PAGES -->
