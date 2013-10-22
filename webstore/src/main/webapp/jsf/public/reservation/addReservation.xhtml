@@ -20,10 +20,10 @@
                             <h:outputLabel for="reserverMail" value="Email: " />
                             <p:inputText id="reserverMail" value="#{addReservation.reserverMail}"/>
                         </p:panelGrid>
+                        
                         <p:button outcome="PRODUCTS_PUBLIC" value="Cancel"/>                   
                         <p:commandButton action="#{addReservation.actOnSelected}"   value="Confirm" />
-                    
-             
+
                     </p:panel>
                 </h:form>
             </ui:define>

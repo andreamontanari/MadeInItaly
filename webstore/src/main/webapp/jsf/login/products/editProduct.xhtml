@@ -10,26 +10,26 @@
     </h:head>
     <h:body>
         <ui:composition template="/WEB-INF/template_auth.xhtml">
-            <br />
             <ui:define name="content">
                 <h:form>
                     <p:panel header="Edit Product">
-                    <p:panelGrid columns="3">
-                        <h:outputText value="Id" />
-                        <p:inputText id="id" value="#{editProduct.id}" disabled="true"/>
-                        <p:message for="id" />
-                        <h:outputText value="Name" />
-                        <p:inputText id="name" value="#{editProduct.name}"/>
-                        <p:message for="name" />
-                        <h:outputText value="Quantity" />
-                        <p:inputText id="quantity" value="#{editProduct.quantity}"/>
-                        <p:message for="quantity" />
-                        <h:outputText value="Price" />
-                        <p:inputText id="price" value="#{editProduct.price}"/>
-                        <p:message for="price" />
-                    </p:panelGrid>
-                    <p:button outcome="products" value="Cancel"/>                   
-                    <p:commandButton action="#{editProduct.actOnSelected}"   value="Edit" />
+                        <p:panelGrid columns="2">
+
+                            <h:outputLabel for="id" value="Id: " />
+                            <p:inputText id="id" value="#{editProduct.id}" disabled="true"/>
+
+                            <h:outputLabel for="name" value="Name: " />
+                            <p:inputText id="name" value="#{editProduct.name}"/>
+
+                            <h:outputLabel for="quantity" value="Quantity: " />
+                            <p:inputText id="quantity" value="#{editProduct.quantity}"/>
+
+                            <h:outputLabel for="price" value="Price: " />
+                            <p:inputText id="price" value="#{editProduct.price}"/>
+
+                        </p:panelGrid>
+                        <p:button outcome="products" value="Cancel"/>                   
+                        <p:commandButton action="#{editProduct.actOnSelected}" value="Edit" />
                     </p:panel>
                 </h:form>
             </ui:define>
