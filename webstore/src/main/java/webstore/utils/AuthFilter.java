@@ -1,4 +1,5 @@
 package webstore.utils;
+
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -20,6 +21,17 @@ public class AuthFilter implements Filter {
     public AuthFilter() {
     }
 
+    /**
+     * Filter for login, makes the session valid or redirect the user to a page
+     * that has been set to visible for the user with no authentication
+     *
+     * @param request
+     * @param response
+     * @param chain
+     *
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         try {
@@ -28,6 +40,8 @@ public class AuthFilter implements Filter {
             HttpServletResponse res = (HttpServletResponse) response;
             HttpSession ses = req.getSession(true);
             String reqURI = req.getRequestURI();
+            //checks if the user the login, addUser page or if a session and a user are 
+            //existing and not null, if it's null then redirect to index.html
             if (reqURI.indexOf("/jsf/login/login.xhtml") >= 0 || reqURI.indexOf("/jsf/login/addUser.xhtml") >= 0 || (ses != null && ses.getAttribute("username") != null)
                     || reqURI.indexOf("/public/") >= 0 || reqURI.contains("javax.faces.resource")) {
                 chain.doFilter(request, response);
@@ -46,5 +60,4 @@ public class AuthFilter implements Filter {
     @Override
     public void destroy() {
     }
-
 }

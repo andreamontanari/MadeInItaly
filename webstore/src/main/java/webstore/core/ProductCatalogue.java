@@ -8,16 +8,16 @@ import javax.persistence.EntityManager;
 
 /**
  * ProductCatalogue
- * 
+ *
  * @author Jonas Ha
  */
 public final class ProductCatalogue extends AbstractDAO<Product, Long> implements IProductCatalogue {
-    
+
     private ProductCatalogue(String puName) {
         super(Product.class, puName);
     }
 
-    // Factory method
+    // new instance method
     public static IProductCatalogue newInstance(String puName) {
         return new ProductCatalogue(puName);
     }

@@ -1,10 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package webstore.core;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -34,26 +29,56 @@ public class Reservation extends AbstractEntity {
         this.product = product;
     }
 
+    /**
+     * Returns the product
+     *
+     * @return product
+     */
     public Product getProduct() {
         return product;
     }
 
+    /**
+     * Sets the product
+     *
+     * @param product
+     */
     public void setProduct(Product product) {
         this.product = product;
     }
 
+    /**
+     * Returns the reservers name
+     *
+     * @return reserverName
+     */
     public String getReserverName() {
         return reserverName;
     }
 
+    /**
+     * Sets the reservers name
+     *
+     * @param reserverName
+     */
     public void setReserverName(String reserverName) {
         this.reserverName = reserverName;
     }
 
+    /**
+     * Returns the reservers email
+     *
+     * @return reserverMail
+     */
     public String getReserverMail() {
         return reserverMail;
     }
 
+    /**
+     * Sets the reservers email
+     *
+     * @param reserverMail
+     */
     public void setReserverMail(String reserverMail) {
         this.reserverMail = reserverMail;
     }

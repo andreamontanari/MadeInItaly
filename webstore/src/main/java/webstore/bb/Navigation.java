@@ -1,11 +1,12 @@
-
 package webstore.bb;
 
 /**
- *  Used in faces-config and beans for navigation
+ * Used in faces-config and beans for navigation
+ *
  * @author Jonas Ha
  */
 public enum Navigation {
+
     PRODUCT_SUCCESS,
     PRODUCT_FAIL,
     RESERVATION_SUCCESS,

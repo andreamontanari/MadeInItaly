@@ -1,4 +1,3 @@
-
 package webstore.bb;
 
 import webstore.core.Product;
@@ -12,20 +11,25 @@ import webstore.core.JPAStore;
 
 /**
  * Backing Bean for Product Page
- * 
+ *
  * @author Jonas Ha
  */
 @Named("products")
-@RequestScoped 
-public class ProductsBB implements Serializable{
-
+@RequestScoped
+public class ProductsBB implements Serializable {
 
     @Inject
     private JPAStore jpa;
-    
-    public List<Product> getAll(){
+
+      /**
+     * Method to get all products from the registry(database)
+     *
+     * @return A List of all the products from the database
+     */
+    public List<Product> getAll() {
         return jpa.getProductCatalogue().getAll();
     }
+
     public String navigate(String target) {
         return target;
     }

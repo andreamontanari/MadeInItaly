@@ -7,26 +7,18 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 /**
- *  Registry for reservations
- * 
+ * Registry for reservations
+ *
  * @author Jonas Ha
  */
 public final class ReservationRegistry extends AbstractDAO<Reservation, Long> implements IReservationRegistry {
-    
+
     private ReservationRegistry(String puName) {
         super(Reservation.class, puName);
     }
 
-    // Factory method
+    // new instance method
     public static ReservationRegistry newInstance(String puName) {
         return new ReservationRegistry(puName);
-    }
-
-    public Reservation getById(Long id) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction();
-        List<Reservation> found = em.createQuery("SELECT m FROM Product m WHERE m.id =" + id).getResultList();
-        em.close();
-        return found.get(0);
     }
 }

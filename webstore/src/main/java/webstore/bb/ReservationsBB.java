@@ -1,4 +1,3 @@
-
 package webstore.bb;
 
 import java.io.Serializable;
@@ -16,18 +15,28 @@ import webstore.core.Reservation;
  */
 @Named("reservations")
 @RequestScoped
-public class ReservationsBB implements Serializable{
-  
+public class ReservationsBB implements Serializable {
+
     @Inject
     private JPAStore jpa;
-    
-     public List<Reservation> getAll(){
+
+    /**
+     * Method to get all reservations registry (database)
+     *
+     * @return A List of all the reservations from the database
+     */
+    public List<Reservation> getAll() {
         return jpa.getReservationRegistry().getAll();
     }
-     
+
+    /**
+     * Returns a String value "target" used to redirecting to a specific JSF
+     * page
+     *
+     * @param String target
+     * @return String target
+     */
     public String navigate(String target) {
         return target;
     }
-    
-    
 }

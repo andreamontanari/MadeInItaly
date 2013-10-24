@@ -11,10 +11,9 @@ import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 import webstore.core.JPAStore;
 
-
 /**
  * Backing bean for Login
- * 
+ *
  * @author Jonas Ha
  */
 @Named("LoginBean")
@@ -25,37 +24,72 @@ public class LoginBean implements Serializable {
     private String username;
     private String password;
     private String message;
-
     @Inject
     private JPAStore jpa;
 
+    /**
+     * Returns the message
+     *
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
 
+    /**
+     * Sets the message
+     *
+     * @param message
+     */
     public void setMessage(String message) {
         this.message = message;
     }
 
+    /**
+     * Returns the password
+     *
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the password
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Returns the username
+     *
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Sets the username
+     *
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * Execute method when performing a login Returns a String value of the
+     * outcome which redirects to a specific page after login or failed.
+     *
+     * @return String value for outcome
+     */
     public String loginWebstore() {
         boolean login = checkAccount(username, password);
-        
+
         if (login) {
             // get Http Session and store username
             HttpSession session = Util.getSession();
@@ -72,8 +106,13 @@ public class LoginBean implements Serializable {
         }
     }
 
+    /**
+     * Check if there is an existing user with a specific username and password
+     *
+     * @return boolean true or false
+     */
     public boolean checkAccount(String uname, String pword) {
-      List<Account> accounts = jpa.getAccountRegistry().getAll();
+        List<Account> accounts = jpa.getAccountRegistry().getAll();
         for (Account element : accounts) {
             if (element.getUsername().equals(uname) && element.getPassword().equals(pword)) {
                 return true;
@@ -82,6 +121,12 @@ public class LoginBean implements Serializable {
         return false;
     }
 
+    /**
+     * Make the login session invalid and returns a String value for redirecting
+     * to specific page
+     *
+     * @return String value for outcome
+     */
     public String logout() {
         HttpSession session = Util.getSession();
         session.invalidate();
