@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import webstore.core.Product;
 import webstore.utils.AbstractEntity_;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2014-03-10T14:25:31")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2014-03-10T15:51:39")
 @StaticMetamodel(Reservation.class)
 public class Reservation_ extends AbstractEntity_ {
 
