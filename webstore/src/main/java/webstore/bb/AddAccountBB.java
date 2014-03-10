@@ -26,10 +26,13 @@ public class AddAccountBB {
     private String password;
 
     /**
+     * @author Josef Haddad
+     * Changed so that you can enter uppercase and lettercase
+     * and it will be the same.
      * Add user account method
      */
     public void add() {
-        Account u = new Account(username, password);
+        Account u = new Account(username.toLowerCase(), password);
         jpa.getAccountRegistry().add(u);
         RequestContext.getCurrentInstance().reset("form-addUser:addUser");
     }

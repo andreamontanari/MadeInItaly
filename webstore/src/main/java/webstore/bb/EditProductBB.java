@@ -22,6 +22,6 @@ public class EditProductBB extends ConversationalBase {
     @Override
     protected String execute() {
         getProductCatalogue().update(new Product(getId(), getName(), getQuantity(), new Double(getPrice())));
-        return "products";
+        return "PRODUCTS_AUTH";
     }
 }

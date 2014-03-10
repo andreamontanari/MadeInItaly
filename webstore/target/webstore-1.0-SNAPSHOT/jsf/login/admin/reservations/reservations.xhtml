@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Made In Italy</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template_auth.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <p:dataTable var="r" value="#{reservations.all}" >   
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText  value="Id"/>
+                            </f:facet>
+                            <h:outputText value="#{r.id}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText  value="Reservers Name"/> 
+                            </f:facet>
+                            <h:outputText value="#{r.reserverName}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText  value="Reservers Email"/> 
+                            </f:facet>
+                            <h:outputText value="#{r.reserverMail}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText  value="Reserved Product"/>
+                            </f:facet>
+                            <h:outputText value="#{r.product.name}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText  value="Action"/>
+                            </f:facet>
+                            <p:commandButton actionListener="#{confirmReservation.setSelectedR(r.id, r.product.id)}"
+                                             action="#{reservations.navigate('confirm')}" value="Confirm" />
+                            <p:commandButton actionListener="#{removeReservation.setSelectedR(r.id, r.product.id)}"
+                                             action="#{reservations.navigate('remove')}" value="Remove" />
+
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

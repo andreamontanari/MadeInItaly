@@ -38,16 +38,6 @@
                                 </f:facet>
                                 <h:outputText value="#{p.price}"/>
                             </p:column>
-                           
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText  value="Action"/>
-                                </f:facet>
-
-                                <p:commandButton actionListener="#{addReservation.setSelected(p.id)}"
-                                                 action="#{products.navigate('res')}" value="Reserv" />
-
-                            </p:column>
                         </p:dataTable>
                     </p:panel>
                 </h:form>

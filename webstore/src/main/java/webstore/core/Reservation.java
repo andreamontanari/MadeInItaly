@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 import webstore.utils.AbstractEntity;
 
 /**
@@ -12,6 +13,7 @@ import webstore.utils.AbstractEntity;
  * @author Jonas Ha
  */
 @Entity
+@XmlRootElement
 public class Reservation extends AbstractEntity {
 
     private String reserverName;

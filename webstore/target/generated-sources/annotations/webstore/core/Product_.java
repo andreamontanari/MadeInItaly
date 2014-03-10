@@ -5,7 +5,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import webstore.utils.AbstractEntity_;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2013-10-21T14:24:41")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2014-03-10T14:25:31")
 @StaticMetamodel(Product.class)
 public class Product_ extends AbstractEntity_ {
 

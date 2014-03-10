@@ -1,6 +1,7 @@
 package webstore.mb;
 
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 import webstore.utils.AbstractEntity;
 
 /**
@@ -9,6 +10,7 @@ import webstore.utils.AbstractEntity;
  * @author Jonas Ha
  */
 @Entity
+@XmlRootElement
 public class Account extends AbstractEntity {
 
     private String username;

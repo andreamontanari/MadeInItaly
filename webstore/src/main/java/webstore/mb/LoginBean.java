@@ -88,15 +88,23 @@ public class LoginBean implements Serializable {
      * @return String value for outcome
      */
     public String loginWebstore() {
-        boolean login = checkAccount(username, password);
+        username = username.toLowerCase();
+        password = password.toLowerCase();
+        String login = checkAccount(username, password);
+        String loginCustomer = checkCustomer(username, password);
 
-        if (login) {
+        if (login.equals("LOGIN_ADMIN")) {
             // get Http Session and store username
             HttpSession session = Util.getSession();
             session.setAttribute("username", username);
-            return "LOGIN_SUCCESS";
-
-        } else {
+            return "LOGIN_ADMIN";
+        } 
+        else if(loginCustomer.equals("LOGIN_CUSTOMER")){
+            HttpSession session1 = Util.getSession();
+            session1.setAttribute("username", username);
+            return "LOGIN_CUSTOMER";
+        }
+        else {
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(FacesMessage.SEVERITY_WARN,
@@ -111,14 +119,26 @@ public class LoginBean implements Serializable {
      *
      * @return boolean true or false
      */
-    public boolean checkAccount(String uname, String pword) {
+    public String checkAccount(String uname, String pword) {
         List<Account> accounts = jpa.getAccountRegistry().getAll();
         for (Account element : accounts) {
             if (element.getUsername().equals(uname) && element.getPassword().equals(pword)) {
-                return true;
+                return "LOGIN_ADMIN";
             }
         }
-        return false;
+        return "LOGIN_FAIL";
+    }
+    
+    
+    public String checkCustomer(String uname, String pword) {
+        List<Customer> customer = jpa.getCustomerRegistry().getAll();
+        for (Customer element : customer) {
+            if (element.getUsername().equals(uname) && element.getPassword().equals(pword)) {
+                
+                return "LOGIN_CUSTOMER";
+            }
+        }
+        return "LOGIN_FAIL";
     }
 
     /**

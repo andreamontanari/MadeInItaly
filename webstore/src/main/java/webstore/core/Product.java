@@ -2,6 +2,7 @@ package webstore.core;
 
 import webstore.utils.AbstractEntity;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * A Product
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
  * @author Jonas Ha
  */
 @Entity
+@XmlRootElement
 public class Product extends AbstractEntity {
 
     private String name;

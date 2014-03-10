@@ -14,15 +14,15 @@
         <from-view-id>*</from-view-id> 
         <navigation-case>
             <from-outcome>HOME</from-outcome>
-            <to-view-id>jsf/public/index.xhtml</to-view-id>
+            <to-view-id>/jsf/public/index.xhtml</to-view-id>
         </navigation-case>
     <navigation-case>
             <from-outcome>PRODUCTS_PUBLIC</from-outcome>
-            <to-view-id>jsf/public/products/products.xhtml</to-view-id>
+            <to-view-id>/jsf/public/products/products.xhtml</to-view-id>
         </navigation-case>    
         <navigation-case>
             <from-outcome>LOGIN</from-outcome>
-            <to-view-id>jsf/login/login.xhtml</to-view-id>
+            <to-view-id>/jsf/login/login.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>ADD_USER</from-outcome>
@@ -44,34 +44,11 @@
             <from-outcome>MALMO_STORE</from-outcome>
             <to-view-id>/jsf/public/stores/malmostore.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>REGISTER_NOW</from-outcome>
+            <to-view-id>/jsf/public/register.xhtml</to-view-id>
+        </navigation-case>
       </navigation-rule>
-
-    
-            
-    <!-- PUBLIC PRODUCT PAGE -->
-    <navigation-rule>
-    <from-view-id>jsf/public/products/products.xhtml</from-view-id> 
-        <navigation-case>
-            <from-outcome>res</from-outcome>
-            <to-view-id>jsf/public/reservation/addReservation.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <!-- PUBLIC RESERVATION, CONFIRM & FAIL -->
-    <navigation-rule>
-    <from-view-id>jsf/public/reservation/addReservation.xhtml</from-view-id> 
-        <navigation-case>
-            <from-outcome>RESERVATION_SUCCESS</from-outcome>
-            <to-view-id>/jsf/public/reservation/reservation_confirm.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule> 
-    <navigation-rule>
-        <from-view-id>/jsf/login/reservations/reservations.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>RESERVATION_FAIL</from-outcome>
-            <to-view-id>/jsf/public/reservation/reservation_fail.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule> 
 
 
 
@@ -79,8 +56,12 @@
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-outcome>LOGIN_SUCCESS</from-outcome>
-            <to-view-id>/jsf/login/products/products.xhtml</to-view-id> 
+            <from-outcome>LOGIN_ADMIN</from-outcome>
+            <to-view-id>/jsf/login/admin/index.xhtml</to-view-id> 
+        </navigation-case> 
+        <navigation-case>
+            <from-outcome>LOGIN_CUSTOMER</from-outcome>
+            <to-view-id>/jsf/login/customer/index.xhtml</to-view-id>
         </navigation-case> 
         <navigation-case>
             <from-outcome>LOGIN_FAIL</from-outcome>
@@ -89,17 +70,21 @@
     </navigation-rule>
     
  
-<!--                            LOGGED IN                                    -->
+<!--                            LOGGED IN ADMIN                                    -->
    
     <navigation-rule>
-        <from-view-id>jsf/login/*</from-view-id> 
+        <from-view-id>/jsf/login/*</from-view-id>
+        <navigation-case>
+            <from-outcome>HOME_AUTH</from-outcome>
+            <to-view-id>/jsf/login/admin/index.xhtml</to-view-id>
+        </navigation-case> 
         <navigation-case>
             <from-outcome>PRODUCTS_AUTH</from-outcome>
-            <to-view-id>jsf/login/products/products.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/products/products.xhtml</to-view-id>
         </navigation-case>    
         <navigation-case>
             <from-outcome>RESERVATIONS_AUTH</from-outcome>
-            <to-view-id>jsf/login/reservations/reservations.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/reservations/reservations.xhtml</to-view-id>
         </navigation-case>   
         <navigation-case>
             <from-outcome>LOGOUT_SUCCESS</from-outcome>
@@ -107,47 +92,110 @@
         </navigation-case> 
         <navigation-case>
             <from-outcome>ADD_USER</from-outcome>
-            <to-view-id>/jsf/login/addUser.xhtml</to-view-id>  
+            <to-view-id>/jsf/login/admin/addUser.xhtml</to-view-id>  
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>USER_DELETED</from-outcome>
+            <to-view-id>/jsf/login/admin/user_deletion.xhtml</to-view-id>  
         </navigation-case>
     </navigation-rule>
     
     <!-- PRODUCT PAGES -->
     <navigation-rule>
-        <from-view-id>/jsf/login/products/products.xhtml</from-view-id>
+        <from-view-id>/jsf/login/admin/products/products.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>add</from-outcome>
-            <to-view-id>/jsf/login/products/addProduct.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/products/addProduct.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>edit</from-outcome>
-            <to-view-id>/jsf/login/products/editProduct.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/products/editProduct.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>del</from-outcome>
-            <to-view-id>/jsf/login/products/delProduct.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/products/delProduct.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule> 
     
     
        <!-- RERSERVATION PAGES -->
     <navigation-rule>
-        <from-view-id>/jsf/login/reservations/reservations.xhtml</from-view-id>
+        <from-view-id>/jsf/login/admin/reservations/reservations.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>confirm</from-outcome>
-            <to-view-id>/jsf/login/reservations/confirm_reservation.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/reservations/confirm_reservation.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>remove</from-outcome>
-            <to-view-id>/jsf/login/reservations/remove_reservation.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/reservations/remove_reservation.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule> 
     
     <!-- ADDPRODUCT PAGES -->
     <navigation-rule>
-        <from-view-id>/jsf/login/products/addProduct.xhtml</from-view-id>
+        <from-view-id>/jsf/login/admin/products/addProduct.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>PRODUCT_SUCCESS</from-outcome>
-            <to-view-id>/jsf/login/products/products.xhtml</to-view-id>
+            <to-view-id>/jsf/login/admin/products/products.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    <!-- RERSERVATION PAGES -->
+    <navigation-rule>
+        <from-view-id>/jsf/login/admin/reservations/reservations.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>confirm</from-outcome>
+            <to-view-id>/jsf/login/admin/reservations/confirm_reservation.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>remove</from-outcome>
+            <to-view-id>/jsf/login/admin/reservations/remove_reservation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!--                            LOGGED IN CUSTOMER                                    -->
+   
+    <navigation-rule>
+        <from-view-id>/jsf/login/*</from-view-id> 
+        <navigation-case>
+            <from-outcome>HOME_CUSTOMER</from-outcome>
+            <to-view-id>/jsf/login/customer/index.xhtml</to-view-id>
+        </navigation-case> 
+        <navigation-case>
+            <from-outcome>PRODUCTS_CUSTOMER</from-outcome>
+            <to-view-id>/jsf/login/customer/products/products.xhtml</to-view-id>
+        </navigation-case>   
+        <navigation-case>
+            <from-outcome>LOGOUT_SUCCESS</from-outcome>
+            <to-view-id>/jsf/public/index.xhtml</to-view-id>  
+        </navigation-case> 
+    </navigation-rule>
+    
+    
+    <!-- CUSTOMER PRODUCT PAGE -->
+    <navigation-rule>
+    <from-view-id>/jsf/login/customer/products/products.xhtml</from-view-id> 
+        <navigation-case>
+            <from-outcome>res</from-outcome>
+            <to-view-id>/jsf/login/customer/reservations/addReservation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- CUSTOMER RESERVATION, CONFIRM & FAIL -->
+    <navigation-rule>
+        <from-view-id>/jsf/login/customer/reservations/addReservation.xhtml</from-view-id> 
+        <navigation-case>
+            <from-outcome>RESERVATION_SUCCESS</from-outcome>
+            <to-view-id>/jsf/login/customer/reservations/reservation_confirm.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    <navigation-rule>
+        <from-view-id>/jsf/login/customer/reservations/addReservation.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>RESERVATION_FAIL</from-outcome>
+            <to-view-id>/jsf/login/customer/reservations/reservation_fail.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule> 
 </faces-config>
+
+

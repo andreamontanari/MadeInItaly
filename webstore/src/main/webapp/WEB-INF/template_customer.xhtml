@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!--
+    
+      THIS IS THE OVERALL LAYOUT FOR THE SITE (not accessible from outside)
+    
+    -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       
+        <h:outputStylesheet library="css" name="layout.css"  />
+        <h:outputStylesheet library="css" name="style.css"  />
+        <title>Made In Italy</title>
+    </h:head>
+    <h:body>
+        <header>
+            
+            <hgroup>
+                <h:link outcome="HOME_CUSTOMER"><h:graphicImage value="/resources/images/logo.png" /></h:link>
+                <nav class="menu">
+                    
+                    <h:form>      
+                        <p:menubar>  
+                            <p:menuitem value="Home" outcome="HOME_CUSTOMER" icon="ui-icon-home" />
+                            <p:submenu label="Products" icon="ui-icon-suitcase">  
+                                <p:menuitem value="All Products" outcome="PRODUCTS_CUSTOMER" />  
+                            </p:submenu>  
+                            <p:submenu icon="ui-icon-unlocked">
+                                <p:menuitem value="Logout #{LoginBean.username}" action="#{LoginBean.logout}" outcome="LOGOUT_SUCCESS"/>
+                            </p:submenu>
+                        </p:menubar>  
+                    </h:form>
+                </nav>
+            </hgroup>
+
+        </header>
+
+        <div id="content" class="right_content">
+
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <footer>
+            <p>Brings you quality</p> 
+        </footer>
+    </h:body>
+
+</html>

@@ -42,7 +42,7 @@ public class AuthFilter implements Filter {
             String reqURI = req.getRequestURI();
             //checks if the user the login, addUser page or if a session and a user are 
             //existing and not null, if it's null then redirect to index.html
-            if (reqURI.indexOf("/jsf/login/login.xhtml") >= 0 || reqURI.indexOf("/jsf/login/addUser.xhtml") >= 0 || (ses != null && ses.getAttribute("username") != null)
+            if (reqURI.indexOf("/jsf/login/login.xhtml") >= 0 || reqURI.indexOf("/jsf/login/admin/addUser.xhtml") >= 0 || (ses != null && ses.getAttribute("username") != null)
                     || reqURI.indexOf("/public/") >= 0 || reqURI.contains("javax.faces.resource")) {
                 chain.doFilter(request, response);
             } else {

@@ -35,16 +35,18 @@
                 <nav class="menu">
                     <h:form>      
                         <p:menubar>  
+                            <p:menuitem value="Home" outcome="HOME" icon="ui-icon-home" />
                             <p:submenu label="Products" icon="ui-icon-suitcase">  
                                 <p:menuitem value="All Products" outcome="PRODUCTS_PUBLIC" />  
                             </p:submenu>  
                             <p:menuitem value="About Us" outcome="ABOUT_US" icon="ui-icon-help" />  
-                            <p:submenu label="Stores" icon="ui-icon-home">  
+                            <p:submenu label="Stores" icon="ui-icon-flag">  
                                 <p:menuitem value="Gothenburg" outcome="GOTHENBURG_STORE"/>
                                 <p:menuitem value="Stockholm" outcome="STOCKHOLM_STORE" />  
                                 <p:menuitem value="Malmoe" outcome ="MALMO_STORE" />  
                             </p:submenu>  
                             <p:menuitem onclick="PF('dlg').show()" icon="ui-icon-locked" />  
+                            <p:menuitem value="Register now" outcome="REGISTER_NOW" icon="ui-icon-person" />
                         </p:menubar>  
                     </h:form>
                 </nav>

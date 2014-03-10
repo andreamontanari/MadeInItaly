@@ -15,35 +15,23 @@ and open the template in the editor.
         <h:form id="loginForm">          
             <p:growl id="msg" showDetail="true" life="3000" />
             <p:panel header="Login" style="width: 360px;">
- 
+                <p style="color: red">
+                    You entered an invalid username or password.
+                </p>
                 <h:panelGrid id="loginPanel" columns="2">
- 
                     <h:outputText value="Username" />
- 
                     <p:inputText id="username" value="#{LoginBean.username}" ></p:inputText>
- 
                     <p:spacer></p:spacer>
- 
                     <p:message for="username" ></p:message>
- 
                     <h:outputText value="Password" />
- 
                     <p:password id="password" value="#{LoginBean.password}"  feedback="false"></p:password>
- 
                     <p:spacer></p:spacer>
- 
                     <p:message for="password"></p:message>
- 
                     <p:spacer></p:spacer>
- 
                     <p:commandButton action="#{LoginBean.loginWebstore()}" value="Login" update="loginForm" ajax="true"></p:commandButton>
- 
+                    <p:spacer></p:spacer>
                 </h:panelGrid>
- 
             </p:panel>
- 
         </h:form>
- 
     </h:body> 
- 
 </html>

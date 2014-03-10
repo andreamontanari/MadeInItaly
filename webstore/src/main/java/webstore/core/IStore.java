@@ -1,6 +1,7 @@
 package webstore.core;
 
 import webstore.mb.IAccountRegistry;
+import webstore.mb.ICustomerRegistry;
 
 /**
  * Interface for the Store
@@ -14,4 +15,6 @@ public interface IStore {
     public IReservationRegistry getReservationRegistry();
 
     public IAccountRegistry getAccountRegistry();
+    
+    public ICustomerRegistry getCustomerRegistry();
 }

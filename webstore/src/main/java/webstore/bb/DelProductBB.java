@@ -21,6 +21,6 @@ public class DelProductBB extends ConversationalBase {
     @Override
     protected String execute() {
         getProductCatalogue().remove(getId());
-        return "products";
+        return "PRODUCTS_AUTH";
     }
 }

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Add Product</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/WEB-INF/template_auth.xhtml">
+            <ui:define name="content">
+
+                <h:form>
+                    <p:panel header="Add Product">
+                        <p:panelGrid columns="2">
+                            <h:outputLabel for="id" value="Id: " />
+                            <p:inputText id="reserverName" value="Set by database" disabled="true"/>
+
+                            <h:outputLabel for="name" value="Name: " />
+                            <p:inputText id="name" value="#{addProduct.name}"/>
+
+                            <h:outputLabel for="quantity" value="Quantity: " />
+                            <p:inputText id="quantity" value="#{addProduct.quantity}"/>
+
+                            <h:outputLabel for="price" value="Price: " />
+                            <p:inputText id="price" value="#{addProduct.price}"/>
+
+                        </p:panelGrid>
+                        <p:button outcome="products" value="Cancel"/>                   
+                        <p:commandButton action="#{addProduct.save}"   value="Save" />
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
